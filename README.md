@@ -1,6 +1,7 @@
 # Azure MLOps (v2) Training
 
-This repo is practice repo for Community IP MLOps In a Day workshop. The goal is to have the participants to build a traing and a deployment pipeline
+This repo is practice repo for Community IP MLOps In a Day workshop. The goal is to have the participants to build a training and a deployment pipeline
+
 ## Repo structure 
 
 ```bash
@@ -64,20 +65,46 @@ This repo is practice repo for Community IP MLOps In a Day workshop. The goal is
 
 ## MLOps v2 Lab
 
+<span style="color:red; font-size: 18px;">**Warning:** This lab will create Azure resources that may incur costs. Ensure you delete all resources, particularly the endpoints, after completing the lab to avoid unnecessary charges.</span>
+
+### Set up
+Create the following if they do not already exist:  
+1.	Create an AML Workspace  (Tutorial: Create workspace resources - Azure Machine Learning | Microsoft Learn)[https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources?view=azureml-api-2#create-the-workspace]
+      a.	You can create a workspace each or share. If you create a shared workspace be sure to name components and pipelines with unique names.
+2.	Create a compute instance (per person) (Create Compute)[https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources?view=azureml-api-2#create-a-compute-instance]
+
+Next
+
+3. Start your compute  
+4. Go to Notebooks and open a terminal. Clone this repo 
+```bash
+git clone https://github.com/Hsenrab/mlops-v2-workshop.git
+```
+
 In this workshop, we provided both CLI and SDK exercise. You can choose your preferred option. The exercise starts from ml-pipeline folder. 
 
 There are 2 labs in this workshop:
 
 ## Lab 1. Building a training pipeline. It can be a custom model pipeline or automl pipeline.
-  - Experiment with notebooks in `notebooks` folder to explore data and model 
-  - Build pipeline by navigating to `ml-pipelines` cli or sdk and running corresponding notebooks
-  - Review components of the pipeline and fill in missing parts and references 
+  - Experiment with notebooks in `notebooks` folder to explore data and model
+    - **make sure to give your experiment a name unique to you, this will need changing in each file**
+    - Run prep.py, train.py and evaluate.py
+    - Take time to gain a basic understanding of what each notebook does.
+    - Got to "Jobs" to view the runs, investigate what data is captured for each step.
+
+  - Build pipeline by navigating to `ml-pipelines` sdk and running corresponding notebooks
+    - If using cli - be sure to investigate the files being used.
   - Once pipeline is run, Model will be trained and registered in the WS registry
 
 ## Lab 2. Building a deployment pipeline, it could either a online endpoint or batch online. 
   - Deploy Model by navigating to `ml-pipelines` cli or sdk and running corresponding notebooks
-  - In this lab, we also provided ci-cd folder to demonstrate Azure Pipeline or Github action orchestration of CI/CD pipeline. 
-    - For GH Actions follow https://github.com/lenisha/mlops-v2-workshop/blob/main/ci-cd/README-GH.md
+    - cli is a continuation of previous notebook.
+    - deployment can take up to 10 minutes.
+
+### (Optional) Look through the other method of deployment (cli/sdk) how is it different? What are the pros and cons of each?
+
+### (Optional) Using the sdk notebooks there is an option to register components at the end. This means you can resuse them. Can you use the designer to recreate the training pipeline?
+
 
 
 

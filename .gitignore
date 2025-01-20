@@ -3,3 +3,6 @@ aml_config
 .azureml/
 **/.ipynb_aml_checkpoints
 **.amltmp
+components/train/.amlignore
+components/register/.amlignore
+components/prep/.amlignore
