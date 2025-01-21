@@ -88,12 +88,13 @@ There are 2 labs in this workshop:
 ## Lab 1. Building a training pipeline. It can be a custom model pipeline or automl pipeline.
   - Experiment with notebooks in `notebooks` folder to explore data and model
     - **make sure to give your experiment a name unique to you, this will need changing in each file**
-    - Run prep.py, train.py and evaluate.py
+    - Run prep.py, train.py and evaluate.py - Use Python3.10 SDK-2 Kernel.
     - Take time to gain a basic understanding of what each notebook does.
     - Got to "Jobs" to view the runs, investigate what data is captured for each step.
 
   - Build pipeline by navigating to `ml-pipelines` sdk and running corresponding notebooks
     - If using cli - be sure to investigate the files being used.
+    - Note that because you are using a compute cluster the first time you use it it will take time to warm up and allocate.
   - Once pipeline is run, Model will be trained and registered in the WS registry
 
 ## Lab 2. Building a deployment pipeline, it could either a online endpoint or batch online. 
